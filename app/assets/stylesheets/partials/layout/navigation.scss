@@ -1,11 +1,11 @@
-.navbar-default, .navbar-toggle:focus, .collapsed, button.navbar-toggle {
+.navbar, .navbar-toggler:focus, .collapse, button.navbar-toggler {
   background: $navbarColor !important;
   border: none;
   a { color: #fff !important }
 }
 
 nav {
-  .navbar-header {
+  .navbar {
     width: 100%;
     button, .navbar-brand {
       transition: opacity 0.15s;

@@ -63,6 +63,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Bootstrap
 gem 'bootstrap', '~> 4.3.1'
-gem "autoprefixer-rails"
-
 gem 'jquery-rails'
+
+# Authentication Gem
+gem 'devise', '~> 4.6.0'

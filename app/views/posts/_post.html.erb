@@ -2,10 +2,14 @@
   <div class="card">
     <div class="card-body">
       <h4 class="post-text"><%= truncate(post.title, :length => 60) %></h4>
+
       <div class="post-content">
         <div class="posted-by card-subtitle mb-2 text-muted">Posted by <%= post.user.username %></div>
+
         <h3 class="card-title"><%= post.title %></h3>
+
         <p class="card-text"><%= post.content %></p>
+
         <%= link_to "I'm interested", post_path(post.id), class: 'interested' %>
       </div>
     </div>

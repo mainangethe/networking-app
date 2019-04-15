@@ -6,6 +6,8 @@ body {
   background: $backgroundColor;
   font-size: 14px;
   font-size: 1.4rem;
+  padding-top: 70px;
+  z-index: 0;
 }
 
 .form-control, .btn {

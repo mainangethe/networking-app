@@ -79,3 +79,5 @@ gem 'poltergeist', '~> 1.18', '>= 1.18.1'
 gem 'database_cleaner', '~> 1.7'
 
 gem 'launchy', '~> 2.4', '>= 2.4.3'
+
+gem 'faker', '~> 1.6', '>= 1.6.3'

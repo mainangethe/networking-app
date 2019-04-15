@@ -66,6 +66,14 @@ RSpec.configure do |config|
   Capybara.javascript_driver = :poltergeist
   Capybara.server = :puma
 
+  Capybara.register_driver :poltergeist do |app|
+    options = {
+      js_errors: false,
+      inspector: true,
+      window_size: [1366,768]
+    }
+    Capybara::Poltergeist::Driver.new(app, options)
+  end
 
     # This block takes a snapshot of the page you are testing.
     # See capybara docs for more on this.
@@ -96,5 +104,4 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
-
 end

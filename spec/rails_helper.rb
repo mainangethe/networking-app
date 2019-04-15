@@ -66,6 +66,17 @@ RSpec.configure do |config|
   Capybara.javascript_driver = :poltergeist
   Capybara.server = :puma
 
+
+    # This block takes a snapshot of the page you are testing.
+    # See capybara docs for more on this.
+    # The snapshots are saved by default in tmp/capybara.
+    config.after do |example|
+        if example.metadata[:type] == :feature
+        # save_and_open_page
+        save_and_open_screenshot
+        end
+    end
+
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and
   # `post` in specs under `spec/controllers`.

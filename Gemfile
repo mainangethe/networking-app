@@ -72,7 +72,7 @@ gem 'devise', '~> 4.6.0'
 
 #TDD Env
 gem 'rspec-rails', '~> 3.8', '>= 3.8.2'
-gem 'factory_girl_rails', '~> 4.9'
+gem 'factory_bot_rails', '~> 5.0', '>= 5.0.2'
 gem 'rails-controller-testing', '~> 1.0', '>= 1.0.4'
 gem 'headless', '~> 2.3', '>= 2.3.1'
 gem 'poltergeist', '~> 1.18', '>= 1.18.1'

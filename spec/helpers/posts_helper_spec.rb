@@ -56,4 +56,16 @@ RSpec.describe PostsHelper, :type => :helper do
 
   end
 
+  context '#category_field_partial_path' do
+    it "returns category field parital's path" do
+      controller.params[:category] = 'category'
+      expect(helper.category_field_partial_path).to eq 'posts/branch/search_form/category_field'
+    end
+
+    it "returns an empty partial's path" do
+      controller.params[:category] = ''
+      expect(helper.category_field_partial_path).to eq 'shared/empty_partial'
+    end
+  end
+
 end

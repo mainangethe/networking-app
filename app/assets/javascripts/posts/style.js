@@ -23,7 +23,7 @@ $(document).on('turbolinks:load', function() {
   });
 
   $('#feed').on('mouseleave', '.single-post-list', function(){
-    $(this).cass('border-color', 'hsla(0, 0, 0%, .05)');
+    $(this).css('border-color', 'hsla(0, 0, 0%, .05)');
   });
 
 });

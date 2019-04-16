@@ -1,0 +1,82 @@
+.single-post-list {
+  min-height: 45px; max-height: 45px;
+  padding: 10px 20px 10px 0;
+  margin: 0 10px;
+  border-bottom: solid 3px hsla(0, 0, 0%, .05);
+  border-bottom-right-radius: 10%;
+  transition: border-color .1s;
+  overflow: hidden;
+  &:hover { cursor: pointer; }
+}
+
+.page-title {
+  margin: 30px auto;
+  text-align: center;
+  background-color: #fff !important;
+  font-weight: bold;
+  a { color: #000; }
+
+  a:hover { text-decoration: underline;}
+}
+
+.categories-list {
+  margin: 10px 0;
+  padding: 0;
+}
+
+.category-item {
+  display: inline-block;
+  margin: 15px 0;
+
+  a {
+    font-size: 16px; font-size: 1.6rem;
+    color: hsla(0, 0, 0%, .7);
+    border: solid 2px hsla(0, 0, 0%, .4);
+    border-radius: 8%;
+    padding: 10px;
+  }
+
+  a:hover, .selected-item {
+    background: $navbarColor;
+    color: #fff;
+    border: solid 2px #fff;
+    border-radius: 0;
+  }
+}
+
+.new-post-button-parent {
+  text-align: right;
+  font-size: 12px; font-size: 1.2rem;
+}
+
+.new-post-button {
+  display: inline-block;
+  background: $navbarColor;
+  color: #fff;
+  margin: 10px 0;
+  padding: 8px;
+  border: solid 2px $navbarColor;
+  border-radius: 10px;
+  font-weight: bold;
+
+  &:hover, &:active, &:focus {
+    background: #fff;
+    color: #000;
+  }
+
+}
+
+.login-branch { margin: 10px 0; }
+
+.login-button-branch {
+  padding: 5px 10px;
+  border-radius: 10px;
+  &:hover, &:active, &:visited, &:link { color: #fff; }
+}
+
+#branch-main-content {
+  background: #fff;
+  height: calc(100vh - 50px);
+}
+
+#feed { background-color: #fff; }

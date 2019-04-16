@@ -27,3 +27,8 @@ i { width: 26px; }
 a:hover, a:active, a:link, a:visited { text-decoration: none; }
 
 .control-label { display: none; }
+
+.login-button, .register-button {
+  background-color: $navbarColor;
+  color: #fff !important;
+}

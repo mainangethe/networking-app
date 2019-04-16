@@ -70,7 +70,7 @@ gem "bootstrap_form", ">= 4.2.0"
 # Authentication Gem
 gem 'devise', '~> 4.6.0'
 
-#TDD Env
+# TDD Env
 gem 'rspec-rails', '~> 3.8', '>= 3.8.2'
 gem 'factory_bot_rails', '~> 5.0', '>= 5.0.2'
 gem 'rails-controller-testing', '~> 1.0', '>= 1.0.4'
@@ -81,3 +81,6 @@ gem 'database_cleaner', '~> 1.7'
 gem 'launchy', '~> 2.4', '>= 2.4.3'
 
 gem 'faker', '~> 1.6', '>= 1.6.3'
+
+# Pagination
+gem 'will_paginate', '~> 3.1', '>= 3.1.7'

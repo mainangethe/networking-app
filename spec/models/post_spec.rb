@@ -13,4 +13,12 @@ RSpec.describe Post, type: :model do
     end
   end
 
+  context 'Scopes' do
+    it 'default scope orders created_at in a descending order' do
+      first_post = create(:post)
+      second_post = create(:post)
+      expect(Post.all).to eq [second_post, first_post]
+    end
+  end
+
 end

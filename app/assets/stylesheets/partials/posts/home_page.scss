@@ -11,7 +11,7 @@
   a, a:active, a:hover { color: #000; }
 
   &:hover {
-    curser: pointer;
+    cursor: pointer;
     background: #fff;
     box-shadow: none;
     border-radius: 1%;
@@ -19,6 +19,7 @@
 
 }
 
+.card-body { border-radius: 50%; }
 .post-content { display: none; }
 
 .solid-color-mode, .border-color-mode {

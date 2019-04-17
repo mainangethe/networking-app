@@ -81,7 +81,7 @@ RSpec.configure do |config|
     config.after do |example|
         if example.metadata[:type] == :feature
         # save_and_open_page
-        save_and_open_page
+        save_and_open_screenshot
         end
     end
 

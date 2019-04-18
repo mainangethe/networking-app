@@ -49,4 +49,61 @@ RSpec.describe Post, type: :model do
 
   end
 
+  context "validations" do
+    let(:category) { create(:category) }
+    let(:user) { create(:user)}
+    let(:post) { build(:post, category_id: category.id, user_id: user.id) }
+
+    it 'creates successfully' do
+      expect(post).to be_valid
+    end
+
+
+
+    it 'is not valid without a category' do
+      post.category_id = nil
+      expect(post).not_to be_valid
+    end
+
+    it 'is not valid without a user id' do
+      post.user_id = nil
+      expect(post).not_to be_valid
+    end
+
+
+
+    it 'is not valid without a title' do
+      post.title = nil
+      expect(post).not_to be_valid
+    end
+
+    it 'is not valid with titles shorter than 4 characters' do
+      post.title = 'abcd'
+      expect(post).not_to be_valid
+    end
+
+    it 'is not valid with titles longer than 255 characters' do
+      post.title = 'a' * 256
+      expect(post).not_to be_valid
+    end
+
+
+
+    it 'is not valid without a post content' do
+      post.content = nil
+      expect(post).not_to be_valid
+    end
+
+    it 'is not valid with content shorter than 20 characters' do
+      post.content = 'a' * 19
+      expect(post).not_to be_valid
+    end
+
+    it 'is not valid with content longer than 1,000 characters' do
+      post.content = 'a' * 1001
+      expect(post).not_to be_valid
+    end
+
+  end
+
 end

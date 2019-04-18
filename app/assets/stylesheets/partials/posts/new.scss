@@ -1,0 +1,12 @@
+.new-post {
+  height: calc(100vh - 50px);
+  background-color: #fff;
+  h1 {
+    text-align: center;
+    margin: 25px 0;
+  }
+
+  .col-sm-6 { margin: 0 auto; }
+
+  input, textarea, select { width: 100%; }
+}

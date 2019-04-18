@@ -9,6 +9,7 @@ require 'rspec/rails'
 require 'capybara/poltergeist'
 require 'factory_bot_rails'
 require 'capybara/rspec'
+
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
 # run as spec files by default. This means that files in spec/support that end
@@ -63,16 +64,32 @@ RSpec.configure do |config|
 
   config.include Devise::Test::IntegrationHelpers, type: :feature
   config.include FactoryBot::Syntax::Methods
-  Capybara.javascript_driver = :poltergeist
+
   Capybara.server = :puma
 
-  Capybara.register_driver :poltergeist do |app|
-    options = {
-      js_errors: false,
-      inspector: true,
-      window_size: [1366,768]
-    }
-    Capybara::Poltergeist::Driver.new(app, options)
+  # Capybara.register_driver :poltergeist do |app|
+  #   options = {
+  #     js_errors: true,
+  #     inspector: true,
+  #     window_size: [1366,768]
+  #   }
+  #   Capybara::Poltergeist::Driver.new(app, options)
+  # end
+
+  Capybara.register_driver :selenium do |app|
+    Capybara::Selenium::Driver.new(app, browser: :chrome)
+  end
+
+  Capybara.javascript_driver = :selenium_chrome
+
+  Capybara.configure do |config|
+    config.default_max_wait_time = 10 # seconds
+    config.default_driver        = :selenium
+  end
+
+  config.before(:each, type: :feature) do
+    # Note (Mike Coutermarsh): Make browser huge so that no content is hidden during tests
+    Capybara.current_session.driver.browser.manage.window.resize_to(1920, 1080)
   end
 
     # This block takes a snapshot of the page you are testing.
